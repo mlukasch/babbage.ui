@@ -28,9 +28,7 @@
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.5.1",
     "pivottable": "git+https://github.com/nicolaskruchten/pivottable.git",
-    "raphael": "^2.1.4"
-  },
-  "devDependencies": {
+    "raphael": "^2.1.4",
     "babel": "^6.5.2",
     "babel-cli": "^6.4.0",
     "babel-core": "^6.4.0",
