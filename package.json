@@ -1,9 +1,9 @@
 {
-  "name": "babbage.ui",
-  "description": "Angular components to use the Cubes Slicer API provided by Babbage.",
-  "homepage": "https://github.com/openspending/babbage.ui",
+  "name": "dev-babb",
+  "description": "For dev",
+  "homepage": "https://github.com/mlukasch/babbage.ui",
   "license": "MIT",
-  "version": "0.1.9-alpha",
+  "version": "0.1.11-alpha",
   "main": "lib/index.js",
   "scripts": {
     "build:lib": "gulp",
