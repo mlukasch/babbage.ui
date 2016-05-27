@@ -7,6 +7,6 @@ bower_components/*
 .tern-port
 npm-debug.log
 # A browser distribution is built in `dist` when pushing to npm.
-dist
+#dist
 # Code transpiled to ES5 is built in `lib` when pushing to npm.
-lib
+#lib
