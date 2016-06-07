@@ -58,6 +58,7 @@ export class TreeMapComponent extends events.EventEmitter {
       .style("height", size.height + "px");
 
 
+    alert("api.aggregate");
     api.aggregate(endpoint, cube, params).then((data) => {
       var root = {
         children: [],
@@ -81,6 +82,7 @@ export class TreeMapComponent extends events.EventEmitter {
         root.children.push(cell);
       }
 
+      alert("emit dataLoaded");
       that.emit('dataLoaded', that, root);
 
       var node = div.datum(root).selectAll(".node")

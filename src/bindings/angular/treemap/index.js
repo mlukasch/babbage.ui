@@ -43,7 +43,10 @@ class TreemapDirective {
                 this.show = !this.show;
               }
             };
+
+            alert("eventhanlder register dataLoaded");
             treeMap.on('dataLoaded', (treeMapComponent, root) => {
+              alert(" dataLoaded");
               $scope.treeMapTable.data = root;
               $scope.$apply();
             });
