@@ -20,6 +20,7 @@ class TreemapDirective {
 
             treeMap.build($scope.endpoint, $scope.cube, $scope.state, wrapper);
             treeMap.on('click', (treeMapComponent, item) => {
+              alert("Klickk");
               $scope.$emit('treemap-click', treeMapComponent, item);
             });
 
@@ -45,7 +46,7 @@ class TreemapDirective {
             };
 
             alert("eventhanlder register dataLoaded");
-            $(treeMap).on('dataLoaded', function(root) {
+            treeMap.on('dataLoaded', function(root) {
               alert(" dataLoaded");
               $scope.treeMapTable.data = root;
               $scope.$apply();

@@ -253,7 +253,6 @@ export class Api {
           params.aggregates = _.first(measures).key;
         }
         params.order = params.order || [{key: params.aggregates, direction: 'desc'}];
-        params.aggregates = undefined; //remove it
 
         var newExtendedGroup = [];
         _.each(params.group, (dimensionKey) => {
