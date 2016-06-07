@@ -45,7 +45,7 @@ class TreemapDirective {
             };
 
             alert("eventhanlder register dataLoaded");
-            treeMap.on('dataLoaded', (treeMapComponent, root) => {
+            treeMap.on('dataLoaded', function(root) {
               alert(" dataLoaded");
               $scope.treeMapTable.data = root;
               $scope.$apply();

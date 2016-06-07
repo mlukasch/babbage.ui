@@ -83,7 +83,7 @@ export class TreeMapComponent extends events.EventEmitter {
       }
 
       alert("emit dataLoaded");
-      that.emit('dataLoaded', that, root);
+      that.emit('dataLoaded', root);
 
       var node = div.datum(root).selectAll(".node")
         .data(that.treemap.nodes)
@@ -119,9 +119,6 @@ export class TreeMapComponent extends events.EventEmitter {
       // Check & Remove all rectangles with text overlfow:
       var boxContentRemover = (item => $(item).empty());
       var hasTextOverflow = TreemapUtils.checkForTextOverflow("a.node", boxContentRemover);
-      if(hasTextOverflow) {
-        that.emit('textOverflow', that);
-      };
       that.emit('endAggregate', that, data);
     });
   }
