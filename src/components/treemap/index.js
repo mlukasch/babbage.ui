@@ -117,8 +117,8 @@ export class TreeMapComponent extends events.EventEmitter {
         .style("background", function(d) { return d._color; });
 
       // Check & Remove all rectangles with text overlfow:
-      var boxContentRemover = (item => $(item).empty());
-      var hasTextOverflow = TreemapUtils.checkForTextOverflow("a.node", boxContentRemover);
+      //var boxContentRemover = (item => $(item).empty());
+      //var hasTextOverflow = TreemapUtils.checkForTextOverflow("a.node", boxContentRemover);
       that.emit('endAggregate', that, data);
     });
   }
