@@ -84,6 +84,9 @@ export class TreeMapComponent extends events.EventEmitter {
 
       alert("emit dataLoaded");
       $.event.trigger({ dataLoaded: root });
+      alert(JSON.stringify(this));
+      alert(JSON.stringify(this.emit));
+      alert(JSON.stringify(root));
       this.emit('dataLoaded', root);
 
       var node = div.datum(root).selectAll(".node")
