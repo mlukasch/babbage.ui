@@ -81,7 +81,7 @@ export class TreeMapComponent extends events.EventEmitter {
         root.children.push(cell);
       }
 
-      that.emit('dataLoaded', that, root);
+
 
       var node = div.datum(root).selectAll(".node")
         .data(that.treemap.nodes)
@@ -120,7 +120,9 @@ export class TreeMapComponent extends events.EventEmitter {
       if(hasTextOverflow) {
         that.emit('textOverflow', that);
       };
-      that.emit('endAggregate', that, data);
+
+      this.emit('dataLoaded', that, root);
+      this.emit('endAggregate', that, data);
     });
   }
 }
