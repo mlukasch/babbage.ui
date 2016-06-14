@@ -62,14 +62,15 @@ export class TreeMapComponent extends events.EventEmitter {
       var root = {
         children: [],
         summary: data.summary[params.aggregates],
-        summary_fmt: Utils.numberFormat(data.summary[params.aggregates])
+        currency: data.summary.currency,
+        summary_fmt: Utils.moneyFormat(Utils.numberFormat(data.summary[params.aggregates]), data.summary.currency)
       };
 
       for (var i in data.cells) {
         var dimension = _.first(data.cells[i].dimensions);
         var measure = _.find(data.cells[i].measures, {key: params.aggregates});
         var cell = {};
-        cell._area_fmt = Utils.numberFormat(Math.round(measure.value));
+        cell._area_fmt = Utils.moneyFormat(Utils.numberFormat(Math.round(measure.value)), root.currency);
         cell._value = measure.value;
         cell._key = dimension.keyValue;
         cell._name = dimension.nameValue;
@@ -94,7 +95,7 @@ export class TreeMapComponent extends events.EventEmitter {
           if (d._percentage < 0.02) {
             return '';
           }
-          return d.children ? null : '<span class="amount">' + d._area_fmt + '</span>' + d._name;
+          return d.children ? null : `<span class=\'amount\'>${d._area_fmt}</span>${d._name}`;
         })
         .on("click", (d) => {
           that.emit('click', that, d);

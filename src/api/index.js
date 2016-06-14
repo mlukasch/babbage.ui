@@ -245,9 +245,11 @@ export class Api {
     params.pagesize = params.pagesize || 30;
     var dimensions = [];
     var measures = [];
+    var model = null;
 
     return this.getPackageModel(endpoint, cube).then((model) => {
         measures = that.getMeasuresFromModel(model);
+        that.model = model;
 
         if (!params.aggregates) {
           params.aggregates = _.first(measures).key;
@@ -284,7 +286,9 @@ export class Api {
         };
 
         _.each(measures, (measure) => {
-          result.summary[measure.key] = data.summary[measure.key];
+          result.summary[measure.key] = data.summary ? data.summary[measure.key] : undefined;
+          let measureModel = that.model.measures[measure.value];
+          result.summary["currency"] = measureModel ? measureModel["currency"] : "";
         });
 
         _.each(data.cells, (cell) => {
