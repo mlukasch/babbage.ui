@@ -59,9 +59,12 @@ export class TreeMapComponent extends events.EventEmitter {
 
 
     api.aggregate(endpoint, cube, params).then((data) => {
+      console.log("xxx data : " + JSON.stringify(data));
+
       var root = {
         children: [],
         summary: data.summary[params.aggregates],
+        currency: data.summary.currency,
         summary_fmt: Utils.numberFormat(data.summary[params.aggregates])
       };
 
@@ -94,7 +97,7 @@ export class TreeMapComponent extends events.EventEmitter {
           if (d._percentage < 0.02) {
             return '';
           }
-          return d.children ? null : '<span class="amount">' + d._area_fmt + '</span>' + d._name;
+          return d.children ? null : `<span class=\"amount\">${d._area_fmt} (${root.currency})</span>${d._name}`;
         })
         .on("click", (d) => {
           that.emit('click', that, d);

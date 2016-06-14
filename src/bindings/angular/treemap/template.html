@@ -33,6 +33,7 @@
         </a>
       </th>
       <th>
+        {{ "(" + treeMapTable.data.currency + ")" }}
         <a href="#" ng-click="treeMapTable.sortAttr = 'value'; treeMapTable.invertSorting();">
           amount
           <span ng-show="treeMapTable.sortAttr == 'value'" class="fa" ng-class="treeMapTable.sortDesc ? 'fa-caret-up' : 'fa-caret-down'"></span>
