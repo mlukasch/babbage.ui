@@ -2,7 +2,8 @@
   "summary": {
     "executed.sum": 150,
     "adjusted.sum": 250,
-    "approved.sum": 350
+    "approved.sum": 350,
+    "currency": "MDL"
   },
   "page": 1,
   "cell": [],
