@@ -33,7 +33,6 @@
         </a>
       </th>
       <th>
-        {{ "(" + treeMapTable.data.currency + ")" }}
         <a href="#" ng-click="treeMapTable.sortAttr = 'value'; treeMapTable.invertSorting();">
           amount
           <span ng-show="treeMapTable.sortAttr == 'value'" class="fa" ng-class="treeMapTable.sortDesc ? 'fa-caret-up' : 'fa-caret-down'"></span>
@@ -50,7 +49,7 @@
     <tbody>
     <tr ng-repeat="item in treeMapTable.data.children | orderBy:treeMapTable.sortAttr:treeMapTable.sortDesc" class="datarow" ng-click="treeMapTable.selectTableRow(item)">
       <td><span class="colorbox" ng-style="{'background-color':item._color}"></span>{{ item._name }}</td>
-      <td>{{ item._area_fmt }}</td>
+      <td>{{ item._area_fmt + " " + treeMapTable.data.currency_fmt }}</td>
       <td>{{ (item._percentage * 100).toFixed(2) }}%</td>
     </tr>
     </tbody>
