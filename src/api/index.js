@@ -288,7 +288,7 @@ export class Api {
         _.each(measures, (measure) => {
           result.summary[measure.key] = data.summary ? data.summary[measure.key] : undefined;
           let measureModel = that.model.measures[measure.value];
-          result.summary["currency"] = measureModel ? measureModel.currency : "";
+          result.summary["currency"] = measureModel ? measureModel["currency"] : "";
         });
 
         _.each(data.cells, (cell) => {

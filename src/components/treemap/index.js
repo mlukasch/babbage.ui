@@ -63,7 +63,7 @@ export class TreeMapComponent extends events.EventEmitter {
         children: [],
         summary: data.summary[params.aggregates],
         currency: data.summary.currency,
-        summary_fmt: Utils.moneyFormat(Utils.numberFormat(data.summary[params.aggregates]))
+        summary_fmt: Utils.moneyFormat(Utils.numberFormat(data.summary[params.aggregates]), data.summary.currency)
       };
 
       for (var i in data.cells) {
