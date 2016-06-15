@@ -139,4 +139,4 @@ export function moneyFormat(amount, currency) {
   } else {
     return amount ? amount : "";
   }
-}
+};

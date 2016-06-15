@@ -59,12 +59,9 @@ export class TreeMapComponent extends events.EventEmitter {
 
 
     api.aggregate(endpoint, cube, params).then((data) => {
-      console.log("xxx data : " + JSON.stringify(data));
-
       var root = {
         children: [],
         summary: data.summary[params.aggregates],
-        currency: data.summary.currency,
         summary_fmt: Utils.moneyFormat(Utils.numberFormat(data.summary[params.aggregates]))
       };
 
